@@ -20,7 +20,10 @@ async function savePage(url, html) {
 }
 
 async function crawl() {
-  const browser = await puppeteer.launch({ headless: "new" });
+const browser = await puppeteer.launch({
+  headless: true,
+  executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+});
   const page = await browser.newPage();
 
   while (queue.length > 0) {
